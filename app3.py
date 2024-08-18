@@ -6,6 +6,11 @@ from langchain import PromptTemplate
 from langchain_aws import BedrockLLM, BedrockChat
 from langchain_core.output_parsers import JsonOutputParser
 
+import boto3
+
+session = boto3.Session(profile_name='default')
+
+
 # Function to prepare batch input with corresponding file names
 def prepare_batch_input(files):
     batch_inputs = []
